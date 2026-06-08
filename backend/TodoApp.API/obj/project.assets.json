@@ -36,6 +36,43 @@
             "related": ".pdb;.xml"
           }
         }
+      },
+      "TodoApp.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "TodoApp.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TodoApp.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TodoApp.Application.dll": {}
+        }
+      },
+      "TodoApp.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/TodoApp.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TodoApp.Domain.dll": {}
+        }
+      },
+      "TodoApp.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "TodoApp.Application": "1.0.0",
+          "TodoApp.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TodoApp.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TodoApp.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -75,11 +112,28 @@
         "microsoft.openapi.2.0.0.nupkg.sha512",
         "microsoft.openapi.nuspec"
       ]
+    },
+    "TodoApp.Application/1.0.0": {
+      "type": "project",
+      "path": "../TodoApp.Application/TodoApp.Application.csproj",
+      "msbuildProject": "../TodoApp.Application/TodoApp.Application.csproj"
+    },
+    "TodoApp.Domain/1.0.0": {
+      "type": "project",
+      "path": "../TodoApp.Domain/TodoApp.Domain.csproj",
+      "msbuildProject": "../TodoApp.Domain/TodoApp.Domain.csproj"
+    },
+    "TodoApp.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../TodoApp.Infrastructure/TodoApp.Infrastructure.csproj",
+      "msbuildProject": "../TodoApp.Infrastructure/TodoApp.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "Microsoft.AspNetCore.OpenApi >= 10.0.8"
+      "Microsoft.AspNetCore.OpenApi >= 10.0.8",
+      "TodoApp.Application >= 1.0.0",
+      "TodoApp.Infrastructure >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -89,11 +143,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\UCSC\\Industry-Project\\PracticeProject\\TodoApp\\backend\\TodoApp.API\\TodoApp.API.csproj",
+      "projectUniqueName": "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.API\\TodoApp.API.csproj",
       "projectName": "TodoApp.API",
-      "projectPath": "D:\\UCSC\\Industry-Project\\PracticeProject\\TodoApp\\backend\\TodoApp.API\\TodoApp.API.csproj",
+      "projectPath": "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.API\\TodoApp.API.csproj",
       "packagesPath": "C:\\Users\\gayas\\.nuget\\packages\\",
-      "outputPath": "D:\\UCSC\\Industry-Project\\PracticeProject\\TodoApp\\backend\\TodoApp.API\\obj\\",
+      "outputPath": "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -115,7 +169,14 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.Application\\TodoApp.Application.csproj": {
+              "projectPath": "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.Application\\TodoApp.Application.csproj"
+            },
+            "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.Infrastructure\\TodoApp.Infrastructure.csproj": {
+              "projectPath": "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.Infrastructure\\TodoApp.Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

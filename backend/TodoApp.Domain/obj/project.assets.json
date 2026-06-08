@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\UCSC\\Industry-Project\\PracticeProject\\TodoApp\\backend\\TodoApp.Domain\\TodoApp.Domain.csproj",
+      "projectUniqueName": "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.Domain\\TodoApp.Domain.csproj",
       "projectName": "TodoApp.Domain",
-      "projectPath": "D:\\UCSC\\Industry-Project\\PracticeProject\\TodoApp\\backend\\TodoApp.Domain\\TodoApp.Domain.csproj",
+      "projectPath": "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.Domain\\TodoApp.Domain.csproj",
       "packagesPath": "C:\\Users\\gayas\\.nuget\\packages\\",
-      "outputPath": "D:\\UCSC\\Industry-Project\\PracticeProject\\TodoApp\\backend\\TodoApp.Domain\\obj\\",
+      "outputPath": "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,11 +1,49 @@
 {
   "version": 4,
   "targets": {
-    "net10.0": {}
+    "net10.0": {
+      "TodoApp.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "TodoApp.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TodoApp.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TodoApp.Application.dll": {}
+        }
+      },
+      "TodoApp.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/TodoApp.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TodoApp.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "TodoApp.Application/1.0.0": {
+      "type": "project",
+      "path": "../TodoApp.Application/TodoApp.Application.csproj",
+      "msbuildProject": "../TodoApp.Application/TodoApp.Application.csproj"
+    },
+    "TodoApp.Domain/1.0.0": {
+      "type": "project",
+      "path": "../TodoApp.Domain/TodoApp.Domain.csproj",
+      "msbuildProject": "../TodoApp.Domain/TodoApp.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0": []
+    "net10.0": [
+      "TodoApp.Application >= 1.0.0",
+      "TodoApp.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\gayas\\.nuget\\packages\\": {},
@@ -14,11 +52,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\UCSC\\Industry-Project\\PracticeProject\\TodoApp\\backend\\TodoApp.Infrastructure\\TodoApp.Infrastructure.csproj",
+      "projectUniqueName": "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.Infrastructure\\TodoApp.Infrastructure.csproj",
       "projectName": "TodoApp.Infrastructure",
-      "projectPath": "D:\\UCSC\\Industry-Project\\PracticeProject\\TodoApp\\backend\\TodoApp.Infrastructure\\TodoApp.Infrastructure.csproj",
+      "projectPath": "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.Infrastructure\\TodoApp.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\gayas\\.nuget\\packages\\",
-      "outputPath": "D:\\UCSC\\Industry-Project\\PracticeProject\\TodoApp\\backend\\TodoApp.Infrastructure\\obj\\",
+      "outputPath": "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -40,7 +78,14 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.Application\\TodoApp.Application.csproj": {
+              "projectPath": "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.Application\\TodoApp.Application.csproj"
+            },
+            "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.Domain\\TodoApp.Domain.csproj": {
+              "projectPath": "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.Domain\\TodoApp.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

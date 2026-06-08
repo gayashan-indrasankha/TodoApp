@@ -1,11 +1,30 @@
 {
   "version": 4,
   "targets": {
-    "net10.0": {}
+    "net10.0": {
+      "TodoApp.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/TodoApp.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TodoApp.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "TodoApp.Domain/1.0.0": {
+      "type": "project",
+      "path": "../TodoApp.Domain/TodoApp.Domain.csproj",
+      "msbuildProject": "../TodoApp.Domain/TodoApp.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0": []
+    "net10.0": [
+      "TodoApp.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\gayas\\.nuget\\packages\\": {},
@@ -14,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\UCSC\\Industry-Project\\PracticeProject\\TodoApp\\backend\\TodoApp.Application\\TodoApp.Application.csproj",
+      "projectUniqueName": "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.Application\\TodoApp.Application.csproj",
       "projectName": "TodoApp.Application",
-      "projectPath": "D:\\UCSC\\Industry-Project\\PracticeProject\\TodoApp\\backend\\TodoApp.Application\\TodoApp.Application.csproj",
+      "projectPath": "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.Application\\TodoApp.Application.csproj",
       "packagesPath": "C:\\Users\\gayas\\.nuget\\packages\\",
-      "outputPath": "D:\\UCSC\\Industry-Project\\PracticeProject\\TodoApp\\backend\\TodoApp.Application\\obj\\",
+      "outputPath": "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -40,7 +59,11 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.Domain\\TodoApp.Domain.csproj": {
+              "projectPath": "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.Domain\\TodoApp.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
