@@ -10,3 +10,15 @@ D:\UCSC\Industry-Project\PracticeProject\TodoApp\backend\TodoApp.Domain\obj\Debu
 D:\UCSC\Industry-Project\PracticeProject\TodoApp\backend\TodoApp.Domain\obj\Debug\net10.0\refint\TodoApp.Domain.dll
 D:\UCSC\Industry-Project\PracticeProject\TodoApp\backend\TodoApp.Domain\obj\Debug\net10.0\TodoApp.Domain.pdb
 D:\UCSC\Industry-Project\PracticeProject\TodoApp\backend\TodoApp.Domain\obj\Debug\net10.0\ref\TodoApp.Domain.dll
+D:\UCSC\Industry-Project\PracticeProject\ToDO\TodoApp\TodoApp\backend\TodoApp.Domain\bin\Debug\net10.0\TodoApp.Domain.deps.json
+D:\UCSC\Industry-Project\PracticeProject\ToDO\TodoApp\TodoApp\backend\TodoApp.Domain\bin\Debug\net10.0\TodoApp.Domain.dll
+D:\UCSC\Industry-Project\PracticeProject\ToDO\TodoApp\TodoApp\backend\TodoApp.Domain\bin\Debug\net10.0\TodoApp.Domain.pdb
+D:\UCSC\Industry-Project\PracticeProject\ToDO\TodoApp\TodoApp\backend\TodoApp.Domain\obj\Debug\net10.0\TodoApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\UCSC\Industry-Project\PracticeProject\ToDO\TodoApp\TodoApp\backend\TodoApp.Domain\obj\Debug\net10.0\TodoApp.Domain.AssemblyInfoInputs.cache
+D:\UCSC\Industry-Project\PracticeProject\ToDO\TodoApp\TodoApp\backend\TodoApp.Domain\obj\Debug\net10.0\TodoApp.Domain.AssemblyInfo.cs
+D:\UCSC\Industry-Project\PracticeProject\ToDO\TodoApp\TodoApp\backend\TodoApp.Domain\obj\Debug\net10.0\TodoApp.Domain.csproj.CoreCompileInputs.cache
+D:\UCSC\Industry-Project\PracticeProject\ToDO\TodoApp\TodoApp\backend\TodoApp.Domain\obj\Debug\net10.0\TodoApp.Domain.sourcelink.json
+D:\UCSC\Industry-Project\PracticeProject\ToDO\TodoApp\TodoApp\backend\TodoApp.Domain\obj\Debug\net10.0\TodoApp.Domain.dll
+D:\UCSC\Industry-Project\PracticeProject\ToDO\TodoApp\TodoApp\backend\TodoApp.Domain\obj\Debug\net10.0\refint\TodoApp.Domain.dll
+D:\UCSC\Industry-Project\PracticeProject\ToDO\TodoApp\TodoApp\backend\TodoApp.Domain\obj\Debug\net10.0\TodoApp.Domain.pdb
+D:\UCSC\Industry-Project\PracticeProject\ToDO\TodoApp\TodoApp\backend\TodoApp.Domain\obj\Debug\net10.0\ref\TodoApp.Domain.dll
