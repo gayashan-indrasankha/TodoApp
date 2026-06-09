@@ -1,6 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using TodoApp.Infrastructure.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Configuration.GetConnectionString("DefaultConnection");
+//Sqlite Connection.
+builder.Services.AddDbContext<TodoDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 // Add services to the container.
 
 builder.Services.AddControllers();

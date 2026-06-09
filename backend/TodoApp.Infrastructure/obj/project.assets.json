@@ -443,6 +443,19 @@
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
+      "TodoApp.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "TodoApp.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TodoApp.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TodoApp.Application.dll": {}
+        }
+      },
       "TodoApp.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
@@ -1012,6 +1025,11 @@
         "sqlitepclraw.provider.e_sqlite3.nuspec"
       ]
     },
+    "TodoApp.Application/1.0.0": {
+      "type": "project",
+      "path": "../TodoApp.Application/TodoApp.Application.csproj",
+      "msbuildProject": "../TodoApp.Application/TodoApp.Application.csproj"
+    },
     "TodoApp.Domain/1.0.0": {
       "type": "project",
       "path": "../TodoApp.Domain/TodoApp.Domain.csproj",
@@ -1021,6 +1039,7 @@
   "projectFileDependencyGroups": {
     "net10.0": [
       "Microsoft.EntityFrameworkCore.Sqlite >= 10.0.8",
+      "TodoApp.Application >= 1.0.0",
       "TodoApp.Domain >= 1.0.0"
     ]
   },
@@ -1058,6 +1077,9 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
+            "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.Application\\TodoApp.Application.csproj": {
+              "projectPath": "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.Application\\TodoApp.Application.csproj"
+            },
             "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.Domain\\TodoApp.Domain.csproj": {
               "projectPath": "D:\\UCSC\\Industry-Project\\PracticeProject\\ToDO\\TodoApp\\TodoApp\\backend\\TodoApp.Domain\\TodoApp.Domain.csproj"
             }

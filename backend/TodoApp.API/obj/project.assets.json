@@ -840,6 +840,19 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
+      "TodoApp.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "TodoApp.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TodoApp.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TodoApp.Application.dll": {}
+        }
+      },
       "TodoApp.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
@@ -855,6 +868,7 @@
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Sqlite": "10.0.8",
+          "TodoApp.Application": "1.0.0",
           "TodoApp.Domain": "1.0.0"
         },
         "compile": {
@@ -2523,6 +2537,11 @@
         "system.composition.typedparts.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "TodoApp.Application/1.0.0": {
+      "type": "project",
+      "path": "../TodoApp.Application/TodoApp.Application.csproj",
+      "msbuildProject": "../TodoApp.Application/TodoApp.Application.csproj"
     },
     "TodoApp.Domain/1.0.0": {
       "type": "project",
