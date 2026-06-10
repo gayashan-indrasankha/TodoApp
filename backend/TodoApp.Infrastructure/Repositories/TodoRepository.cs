@@ -30,7 +30,7 @@ namespace TodoApp.Infrastructure.Repositories
             return todo_item;
         }
 
-        public Todo Update(TodoApp.Domain.Entities.Todo todo_item)
+        public Todo Update(Todo todo_item)
         {
             _context.Todos.Update(todo_item);
             _context.SaveChanges();
