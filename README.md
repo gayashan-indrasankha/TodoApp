@@ -18,16 +18,16 @@ Completed:
 - ToDo entity implemented
 - DTOs implemented
 - `ITodoRepository` interface implemented
-
-Next:
-
 - Set up Entity Framework Core with SQLite
 - Create `TodoDbContext`
 - Create EF Core repository implementation
 - Create service interface and service
 - Register dependencies in `Program.cs`
 - Add CRUD API endpoints
-- Test APIs using Swagger
+- Test APIs using Postman
+
+Next:
+
 - Build React frontend
 - Connect frontend with backend API
 
@@ -76,11 +76,11 @@ TodoApp.Infrastructure
 
 ## Layer Responsibilities
 
-| Layer | Responsibility |
-|---|---|
-| API | Receives HTTP requests and returns responses |
-| Application | Contains DTOs, interfaces, services, and business logic |
-| Domain | Contains core entities |
+| Layer          | Responsibility                                                         |
+| -------------- | ---------------------------------------------------------------------- |
+| API            | Receives HTTP requests and returns responses                           |
+| Application    | Contains DTOs, interfaces, services, and business logic                |
+| Domain         | Contains core entities                                                 |
 | Infrastructure | Contains EF Core DbContext, migrations, and repository implementations |
 
 ## Backend Flow
@@ -215,14 +215,14 @@ Feature branches are created only when needed.
 
 ## Branch Purpose
 
-| Branch | Purpose |
-|---|---|
-| main | Stable final version |
-| develop | Main development branch |
-| feature/setup-clean-architecture | Initial Clean Architecture project setup |
-| feature/setup-ef-core-sqlite | EF Core and SQLite setup |
-| feature/todo-crud | Backend CRUD implementation |
-| feature/final-testing-docs | Final testing, bug fixing, and documentation |
+| Branch                           | Purpose                                      |
+| -------------------------------- | -------------------------------------------- |
+| main                             | Stable final version                         |
+| develop                          | Main development branch                      |
+| feature/setup-clean-architecture | Initial Clean Architecture project setup     |
+| feature/setup-ef-core-sqlite     | EF Core and SQLite setup                     |
+| feature/todo-crud                | Backend CRUD implementation                  |
+| feature/final-testing-docs       | Final testing, bug fixing, and documentation |
 
 ## Recommended Development Order
 
