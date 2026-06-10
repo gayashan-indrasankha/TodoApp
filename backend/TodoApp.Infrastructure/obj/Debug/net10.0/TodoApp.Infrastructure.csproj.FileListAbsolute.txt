@@ -23,3 +23,8 @@ D:\UCSC\Industry-Project\PracticeProject\ToDO\TodoApp\TodoApp\backend\TodoApp.In
 D:\UCSC\Industry-Project\PracticeProject\ToDO\TodoApp\TodoApp\backend\TodoApp.Infrastructure\obj\Debug\net10.0\refint\TodoApp.Infrastructure.dll
 D:\UCSC\Industry-Project\PracticeProject\ToDO\TodoApp\TodoApp\backend\TodoApp.Infrastructure\obj\Debug\net10.0\TodoApp.Infrastructure.pdb
 D:\UCSC\Industry-Project\PracticeProject\ToDO\TodoApp\TodoApp\backend\TodoApp.Infrastructure\obj\Debug\net10.0\ref\TodoApp.Infrastructure.dll
+D:\UCSC\Industry-Project\PracticeProject\ToDO\TodoApp\TodoApp\backend\TodoApp.Infrastructure\bin\Debug\net10.0\TodoApp.Application.dll
+D:\UCSC\Industry-Project\PracticeProject\ToDO\TodoApp\TodoApp\backend\TodoApp.Infrastructure\bin\Debug\net10.0\TodoApp.Domain.dll
+D:\UCSC\Industry-Project\PracticeProject\ToDO\TodoApp\TodoApp\backend\TodoApp.Infrastructure\bin\Debug\net10.0\TodoApp.Application.pdb
+D:\UCSC\Industry-Project\PracticeProject\ToDO\TodoApp\TodoApp\backend\TodoApp.Infrastructure\bin\Debug\net10.0\TodoApp.Domain.pdb
+D:\UCSC\Industry-Project\PracticeProject\ToDO\TodoApp\TodoApp\backend\TodoApp.Infrastructure\obj\Debug\net10.0\TodoApp..D6B2378B.Up2Date

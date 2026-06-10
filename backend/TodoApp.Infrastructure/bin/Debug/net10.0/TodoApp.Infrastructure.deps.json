@@ -8,7 +8,9 @@
     ".NETCoreApp,Version=v10.0": {
       "TodoApp.Infrastructure/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Sqlite": "10.0.8"
+          "Microsoft.EntityFrameworkCore.Sqlite": "10.0.8",
+          "TodoApp.Application": "1.0.0",
+          "TodoApp.Domain": "1.0.0"
         },
         "runtime": {
           "TodoApp.Infrastructure.dll": {}
@@ -345,6 +347,25 @@
             "fileVersion": "2.1.11.2622"
           }
         }
+      },
+      "TodoApp.Application/1.0.0": {
+        "dependencies": {
+          "TodoApp.Domain": "1.0.0"
+        },
+        "runtime": {
+          "TodoApp.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "TodoApp.Domain/1.0.0": {
+        "runtime": {
+          "TodoApp.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -493,6 +514,16 @@
       "sha512": "sha512-Y/0ZkR+r0Cg3DQFuCl1RBnv/tmxpIZRU3HUvelPw6MVaKHwYYR8YNvgs0vuNuXCMvlyJ+Fh88U1D4tah1tt6qw==",
       "path": "sqlitepclraw.provider.e_sqlite3/2.1.11",
       "hashPath": "sqlitepclraw.provider.e_sqlite3.2.1.11.nupkg.sha512"
+    },
+    "TodoApp.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TodoApp.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

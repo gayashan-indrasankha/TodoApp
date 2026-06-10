@@ -25,7 +25,7 @@ namespace TodoApp.Application.Services
                     Id = todo.Id,
                     Title = todo.Title,
                     Description = todo.Description,
-                    status = todo.status,
+                    Status = todo.Status,
                     CreatedAt = todo.CreatedAt
                 };
                 todoDtos.Add(todoDto);
@@ -45,7 +45,7 @@ namespace TodoApp.Application.Services
                 Id = todo.Id,
                 Title = todo.Title,
                 Description = todo.Description,
-                status = todo.status,
+                Status = todo.Status,
                 CreatedAt = todo.CreatedAt
             };
             return todoDto;
@@ -61,7 +61,7 @@ namespace TodoApp.Application.Services
             {
                 Title = createTodoDto.Title,
                 Description = createTodoDto.Description,
-                status = createTodoDto.Status
+                Status = createTodoDto.Status
             };
            
             var createdTodo = _TodoRepository.Add(todo);
@@ -71,7 +71,7 @@ namespace TodoApp.Application.Services
                 Id = createdTodo.Id,
                 Title = createdTodo.Title,
                 Description = createdTodo.Description,
-                status = createdTodo.status,
+                Status = createdTodo.Status,
                 CreatedAt = createdTodo.CreatedAt
             };
 
@@ -93,7 +93,7 @@ namespace TodoApp.Application.Services
 
             existingTodo.Title = updateTodoDto.Title;
             existingTodo.Description = updateTodoDto.Description;
-            existingTodo.status = updateTodoDto.status;
+            existingTodo.Status = updateTodoDto.Status;
 
             var updatedTodo = _TodoRepository.Update(existingTodo);
 
@@ -107,7 +107,7 @@ namespace TodoApp.Application.Services
                 Id = updatedTodo.Id,
                 Title = updatedTodo.Title,
                 Description = updatedTodo.Description,
-                status = updatedTodo.status,
+                Status = updatedTodo.Status,
                 CreatedAt = updatedTodo.CreatedAt
             };
             return todoDto;

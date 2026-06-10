@@ -9,6 +9,6 @@ namespace TodoApp.Application.DTOs
     {
         public string Title { get; set; } = string.Empty;
         public string? Description { get; set; } = string.Empty;
-        public TodoStatus status { get; set; } = TodoStatus.Active;
+        public TodoStatus Status { get; set; } = TodoStatus.Active;
     }
 }
