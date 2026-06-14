@@ -1,125 +1,155 @@
-.app-container {
-  max-width: 850px;
-  margin: 0 auto;
-  padding: 32px 20px;
+.app-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  color: #0f172a;
 }
 
-.app-header {
-  text-align: center;
-  margin-bottom: 32px;
-}
-
-.app-header h1 {
-  margin-bottom: 8px;
-  font-size: 36px;
-}
-
-.app-header p {
-  color: #666;
-}
-
-.todo-form-section,
-.todo-list-section {
+.top-bar {
+  height: 72px;
   background: white;
-  padding: 24px;
-  border-radius: 12px;
-  margin-bottom: 24px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-}
-
-.todo-form-section h2,
-.todo-list-section h2 {
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
-.todo-form {
+  border-bottom: 1px solid #e5e7eb;
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-.form-group {
+.brand {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  align-items: center;
+  gap: 14px;
 }
 
-.form-group label {
-  font-weight: 600;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-  padding: 10px 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 15px;
-}
-
-.form-group textarea {
-  min-height: 90px;
-  resize: vertical;
-}
-
-.form-actions,
-.todo-actions {
-  display: flex;
-  gap: 10px;
-}
-
-button {
-  border: none;
-  border-radius: 8px;
-  padding: 10px 14px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.primary-btn {
+.brand-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
   background: #2563eb;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
 }
 
-.secondary-btn {
-  background: #e5e7eb;
-  color: #111827;
+.brand h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.brand p {
+  margin: 2px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.add-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.app-container {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 20px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.stat-card span {
+  color: #64748b;
+  font-weight: 600;
+}
+
+.stat-card strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 28px;
+  color: #2563eb;
+}
+
+.todo-section {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.todo-section h2 {
+  margin: 0;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .todo-list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
 }
 
-.todo-card {
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 16px;
-  background: #fafafa;
-}
-
-.todo-card-header {
+.todo-row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  gap: 18px;
+  padding: 18px 24px;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-.todo-card h3 {
-  margin: 0;
+.todo-row:last-child {
+  border-bottom: none;
 }
 
-.todo-card p {
-  color: #555;
+.todo-checkbox {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.todo-content {
+  flex: 1;
+}
+
+.todo-content h3 {
+  margin: 0 0 6px;
+  font-size: 17px;
+}
+
+.todo-content p {
+  margin: 0 0 8px;
+  color: #64748b;
+}
+
+.completed-title {
+  text-decoration: line-through;
+  color: #64748b;
 }
 
 .status-badge {
+  display: inline-block;
   padding: 5px 10px;
   border-radius: 999px;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .pending {
@@ -132,21 +162,154 @@ button {
   color: #166534;
 }
 
+.todo-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 600;
+  background: white;
+}
+
 .edit-btn {
-  background: #f59e0b;
-  color: white;
+  color: #2563eb;
 }
 
 .delete-btn {
-  background: #dc2626;
-  color: white;
+  color: #dc2626;
 }
 
 .message {
-  color: #555;
+  padding: 24px;
+  color: #64748b;
 }
 
 .error-message {
+  padding: 24px;
   color: #dc2626;
   font-weight: 600;
+}
+
+/* Modal */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 100;
+}
+
+.modal {
+  width: 100%;
+  max-width: 620px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.25);
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26px 30px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 34px;
+  color: #475569;
+  cursor: pointer;
+}
+
+.todo-form {
+  padding: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  font-weight: 700;
+  color: #334155;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 13px 15px;
+  font-size: 16px;
+  color: #0f172a;
+}
+
+.form-group textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  padding-top: 8px;
+}
+
+.cancel-btn,
+.save-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.save-btn {
+  background: #2563eb;
+  color: white;
+}
+
+@media (max-width: 700px) {
+  .top-bar {
+    padding: 0 18px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .todo-row {
+    align-items: flex-start;
+  }
+
+  .todo-actions {
+    flex-direction: column;
+  }
 }
