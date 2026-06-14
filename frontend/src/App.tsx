@@ -1,29 +1,42 @@
-import { useState } from 'react'
+import { useEffect, useState, type FormEvent } from 'react'
 import type { Todo } from './types/todo'
+import { getTodos, createTodo, updateTodo, deleteTodo } from './api/todoApi'
 import './App.css'
 
 function App() {
-  const [todos, setTodos] = useState<Todo[]>([
-    {
-      id: 1,
-      title: 'Learn React',
-      description: 'Understand components and state',
-      status: 0,
-    },
-    {
-      id: 2,
-      title: 'Build Todo Frontend',
-      description: 'Create UI for the Todo app',
-      status: 1,
-    },
-  ])
+  const [todos, setTodos] = useState<Todo[]>([])
 
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [status, setStatus] = useState(0)
+
   const [editingTodoId, setEditingTodoId] = useState<number | null>(null)
 
-  function handleSubmit(event: React.FormEvent) {
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+
+  useEffect(() => {
+    loadTodos()
+  }, [])
+
+  function loadTodos() {
+    setLoading(true)
+    setError('')
+
+    getTodos()
+      .then((data) => {
+        setTodos(data)
+      })
+      .catch((error) => {
+        console.error(error)
+        setError('Failed to load todos from backend')
+      })
+      .finally(() => {
+        setLoading(false)
+      })
+  }
+
+  function handleSubmit(event: FormEvent) {
     event.preventDefault()
 
     if (title.trim() === '') {
@@ -31,50 +44,65 @@ function App() {
       return
     }
 
-     if (editingTodoId === null) {
-    const newTodo: Todo = {
-      id: todos.length + 1,
+    if (editingTodoId === null) {
+      createTodo({
       title: title,
       description: description,
       status: status,
-    }
-
-    setTodos([...todos, newTodo])
-
-  } else {
-    const updatedTodos = todos.map((todo) => {
-      if (todo.id === editingTodoId) {
-        return {
-          ...todo,
-          title: title,
-          description: description,
-          status: status,
-        }
-      }
-
-      return todo
     })
-
-    setTodos(updatedTodos)
+      .then(() => {
+        clearForm()
+        loadTodos()
+      })
+      .catch((error) => {
+        console.error(error)
+        alert('Failed to create todo')
+      })
+    } else {
+    updateTodo(editingTodoId, {
+      title: title,
+      description: description,
+      status: status,
+    })
+      .then(() => {
+        clearForm()
+        loadTodos()
+      })
+      .catch((error) => {
+        console.error(error)
+        alert('Failed to update todo')
+      })
+      }
   }
-
-  setTitle('')
-  setDescription('')
-  setStatus(0)
-  setEditingTodoId(null)
-}
+  function handleEdit(todo: Todo) {
+    setEditingTodoId(todo.id)
+    setTitle(todo.title)
+    setDescription(todo.description)
+    setStatus(todo.status)
+  }
 
   function handleDelete(id: number) {
-  const updatedTodos = todos.filter((todo) => todo.id !== id)
+    const confirmed = confirm('Are you sure you want to delete this todo?')
 
-  setTodos(updatedTodos)
+    if (!confirmed) {
+      return
+    }
+
+    deleteTodo(id)
+      .then(() => {
+        loadTodos()
+      })
+      .catch((error) => {
+        console.error(error)
+        alert('Failed to delete todo')
+      })
   }
 
-  function handleEdit(todo: Todo) {
-  setEditingTodoId(todo.id)
-  setTitle(todo.title)
-  setDescription(todo.description)
-  setStatus(todo.status)
+  function clearForm() {
+    setTitle('')
+    setDescription('')
+    setStatus(0)
+    setEditingTodoId(null)
   }
 
   return (
@@ -82,7 +110,7 @@ function App() {
       <h1>Todo App</h1>
       <p>Welcome to the Todo App!</p>
 
-      <h2>Create Todo</h2>
+      <h2>{editingTodoId === null ? 'Create Todo' : 'Update Todo'}</h2>
 
       <form onSubmit={handleSubmit}>
         <div>
@@ -125,28 +153,25 @@ function App() {
         <br />
 
         <button type="submit">
-            {editingTodoId === null ? 'Add Todo' : 'Update Todo'}
+          {editingTodoId === null ? 'Add Todo' : 'Update Todo'}
         </button>
+
         {editingTodoId !== null && (
-          <button
-            type="button"
-            onClick={() => {
-              setTitle('')
-              setDescription('')
-              setStatus(0)
-              setEditingTodoId(null)
-            }}
-          >
+          <button type="button" onClick={clearForm}>
             Cancel
           </button>
-        )}            
+        )}
       </form>
 
       <hr />
 
       <h2>Todo List</h2>
 
-      {todos.length === 0 ? (
+      {loading && <p>Loading todos...</p>}
+
+      {error !== '' && <p>{error}</p>}
+
+      {!loading && todos.length === 0 ? (
         <p>No todos found.</p>
       ) : (
         <div>
@@ -155,14 +180,10 @@ function App() {
               <h3>{todo.title}</h3>
               <p>{todo.description}</p>
               <p>Status: {todo.status === 0 ? 'Pending' : 'Completed'}</p>
-       
-              <button onClick={() => handleEdit(todo)}>
-              Edit
-              </button>
 
-              <button onClick={() => handleDelete(todo.id)}>
-                Delete
-              </button>
+              <button onClick={() => handleEdit(todo)}>Edit</button>
+
+              <button onClick={() => handleDelete(todo.id)}>Delete</button>
             </div>
           ))}
         </div>

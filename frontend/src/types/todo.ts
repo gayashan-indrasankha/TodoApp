@@ -5,3 +5,17 @@ export type Todo = {
   status: number;
   createdAt?: string;
 };
+
+export type CreateTodo = {
+  title: string;
+  description: string;
+  status: number;
+};
+
+export type UpdateTodo = {
+  title: string;
+  description: string;
+  status: number;
+};
+
+
