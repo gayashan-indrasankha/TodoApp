@@ -1,6 +1,6 @@
 import { useEffect, useState, type FormEvent } from 'react'
 import type { Todo } from './types/todo'
-import { getTodos, createTodo, updateTodo, deleteTodo } from './api/todoApi'
+import { createTodo, deleteTodo, getTodos, updateTodo } from './api/todoApi'
 import './App.css'
 
 function App() {
@@ -46,34 +46,35 @@ function App() {
 
     if (editingTodoId === null) {
       createTodo({
-      title: title,
-      description: description,
-      status: status,
-    })
-      .then(() => {
-        clearForm()
-        loadTodos()
+        title,
+        description,
+        status,
       })
-      .catch((error) => {
-        console.error(error)
-        alert('Failed to create todo')
-      })
+        .then(() => {
+          clearForm()
+          loadTodos()
+        })
+        .catch((error) => {
+          console.error(error)
+          alert('Failed to create todo')
+        })
     } else {
-    updateTodo(editingTodoId, {
-      title: title,
-      description: description,
-      status: status,
-    })
-      .then(() => {
-        clearForm()
-        loadTodos()
+      updateTodo(editingTodoId, {
+        title,
+        description,
+        status,
       })
-      .catch((error) => {
-        console.error(error)
-        alert('Failed to update todo')
-      })
-      }
+        .then(() => {
+          clearForm()
+          loadTodos()
+        })
+        .catch((error) => {
+          console.error(error)
+          alert('Failed to update todo')
+        })
+    }
   }
+
   function handleEdit(todo: Todo) {
     setEditingTodoId(todo.id)
     setTitle(todo.title)
@@ -106,88 +107,105 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>Todo App</h1>
-      <p>Welcome to the Todo App!</p>
+    <div className="app-container">
+      <header className="app-header">
+        <h1>Todo App</h1>
+        <p>Manage your daily tasks easily</p>
+      </header>
 
-      <h2>{editingTodoId === null ? 'Create Todo' : 'Update Todo'}</h2>
+      <section className="todo-form-section">
+        <h2>{editingTodoId === null ? 'Create Todo' : 'Update Todo'}</h2>
 
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Title</label>
-          <br />
-          <input
-            type="text"
-            value={title}
-            onChange={(event) => setTitle(event.target.value)}
-            placeholder="Enter todo title"
-          />
-        </div>
+        <form onSubmit={handleSubmit} className="todo-form">
+          <div className="form-group">
+            <label>Title</label>
+            <input
+              type="text"
+              value={title}
+              onChange={(event) => setTitle(event.target.value)}
+              placeholder="Enter todo title"
+            />
+          </div>
 
-        <br />
+          <div className="form-group">
+            <label>Description</label>
+            <textarea
+              value={description}
+              onChange={(event) => setDescription(event.target.value)}
+              placeholder="Enter todo description"
+            />
+          </div>
 
-        <div>
-          <label>Description</label>
-          <br />
-          <textarea
-            value={description}
-            onChange={(event) => setDescription(event.target.value)}
-            placeholder="Enter todo description"
-          />
-        </div>
+          <div className="form-group">
+            <label>Status</label>
+            <select
+              value={status}
+              onChange={(event) => setStatus(Number(event.target.value))}
+            >
+              <option value={0}>Pending</option>
+              <option value={1}>Completed</option>
+            </select>
+          </div>
 
-        <br />
+          <div className="form-actions">
+            <button type="submit" className="primary-btn">
+              {editingTodoId === null ? 'Add Todo' : 'Update Todo'}
+            </button>
 
-        <div>
-          <label>Status</label>
-          <br />
-          <select
-            value={status}
-            onChange={(event) => setStatus(Number(event.target.value))}
-          >
-            <option value={0}>Pending</option>
-            <option value={1}>Completed</option>
-          </select>
-        </div>
+            {editingTodoId !== null && (
+              <button type="button" onClick={clearForm} className="secondary-btn">
+                Cancel
+              </button>
+            )}
+          </div>
+        </form>
+      </section>
 
-        <br />
+      <section className="todo-list-section">
+        <h2>Todo List</h2>
 
-        <button type="submit">
-          {editingTodoId === null ? 'Add Todo' : 'Update Todo'}
-        </button>
+        {loading && <p className="message">Loading todos...</p>}
 
-        {editingTodoId !== null && (
-          <button type="button" onClick={clearForm}>
-            Cancel
-          </button>
+        {error !== '' && <p className="error-message">{error}</p>}
+
+        {!loading && todos.length === 0 && (
+          <p className="message">No todos found.</p>
         )}
-      </form>
 
-      <hr />
+        {!loading && todos.length > 0 && (
+          <div className="todo-list">
+            {todos.map((todo) => (
+              <div key={todo.id} className="todo-card">
+                <div className="todo-card-header">
+                  <h3>{todo.title}</h3>
 
-      <h2>Todo List</h2>
+                  <span
+                    className={
+                      todo.status === 0
+                        ? 'status-badge pending'
+                        : 'status-badge completed'
+                    }
+                  >
+                    {todo.status === 0 ? 'Pending' : 'Completed'}
+                  </span>
+                </div>
 
-      {loading && <p>Loading todos...</p>}
+                <p>{todo.description}</p>
 
-      {error !== '' && <p>{error}</p>}
+                <div className="todo-actions">
+                  <button onClick={() => handleEdit(todo)} className="edit-btn">
+                    Edit
+                  </button>
 
-      {!loading && todos.length === 0 ? (
-        <p>No todos found.</p>
-      ) : (
-        <div>
-          {todos.map((todo) => (
-            <div key={todo.id}>
-              <h3>{todo.title}</h3>
-              <p>{todo.description}</p>
-              <p>Status: {todo.status === 0 ? 'Pending' : 'Completed'}</p>
-
-              <button onClick={() => handleEdit(todo)}>Edit</button>
-
-              <button onClick={() => handleDelete(todo.id)}>Delete</button>
-            </div>
-          ))}
-        </div>
-      )}
+                  <button onClick={() => handleDelete(todo.id)} className="delete-btn">
+                    Delete
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
     </div>
   )
 }
